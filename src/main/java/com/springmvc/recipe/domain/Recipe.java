@@ -16,7 +16,8 @@ public class Recipe  {
     private Integer servings;
     private String source;
     private String url;
-    //    private Difficulty difficulty
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty
     private String directions;
 
     @Lob
@@ -102,6 +103,27 @@ public class Recipe  {
         this.directions = directions;
     }
 
+    public Difficulty getDifficulty() {
+        return difficulty;
+    }
 
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
 
+    public Notes getNotes() {
+        return notes;
+    }
+
+    public void setNotes(Notes notes) {
+        this.notes = notes;
+    }
+
+    public Set<Ingridients> getIngridientsSet() {
+        return ingridientsSet;
+    }
+
+    public void setIngridientsSet(Set<Ingridients> ingridientsSet) {
+        this.ingridientsSet = ingridientsSet;
+    }
 }
