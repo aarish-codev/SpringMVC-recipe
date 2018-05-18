@@ -17,7 +17,7 @@ public class Recipe  {
     private String source;
     private String url;
     @Enumerated(value = EnumType.STRING)
-    private Difficulty difficulty
+    private Difficulty difficulty;
     private String directions;
 
     @Lob
