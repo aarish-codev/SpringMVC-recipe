@@ -1,6 +1,7 @@
 package com.springmvc.recipe.domain;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Recipe  {
@@ -8,6 +9,7 @@ public class Recipe  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String description;
     private Integer prepTime;
     private Integer cookTime;
@@ -22,6 +24,9 @@ public class Recipe  {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingridients> ingridientsSet;
 
     public Long getId() {
         return id;
